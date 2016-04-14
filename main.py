@@ -1,28 +1,29 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#    -- Company: ADNerd SRL
+#    -- Engineers: Moya, Martín; Santos, Lucio; Soria, Leandro
+#    --
+#    -- Create Date:    10:46:25 03/28/2016
+#    -- Project Name: ADNerd - Plot
+#    -- Target Devices: OSX, Windows, Linux (Unix based Systems)
+#    -- Tool versions: Python 2.7, Qt 3.6.1
+#    --
+#    -- Dependencies: PyQt4, PySerial, Pyqtgraph
+#    --
+#    -- Revision: 1.00
+#    -- Additional Comments: For further information contact moyamartin1@gmail.com
 
 from PyQt4 import QtGui
+from Dialog_Classes import mainForm
 import sys
-import os
-
-import design
-
-class App(QtGui.QMainWindow, design.Ui_MainWindow):
-    def __init__(self):
-        #Super() es usado para referirse a clases padres sin nombrarla explícitamente
-        super(self.__class__, self).__init__()
-        #Setea el layout y los widgets definidos dentro del ui
-        #Está definido automáticamente en design.py
-        self.setupUi(self)
-        #Esto relaciona el clickeo del botón con una función que definimos más tarde
-        #self.btnBrowse.clicked.connect(self.browse_folder)
 
 
 def main():
-    app = QtGui.QApplication(sys.argv)  #Una nueva instancia de la aplicación
-    form = App()    #Seteamos la forma para que sea la aplicación que diseñamos
-    form.show()     #Muestra la forma
-    app.exec_()     #Ejecuta la aplicación
+    app = QtGui.QApplication(sys.argv)  # Una nueva instancia de la aplicación
+    form = mainForm.MainForm()  # Seteamos la forma para que sea la aplicación que diseñamos
+    form.show()  # Muestra la forma
+    app.exec_()  # Ejecuta la aplicación
+
 
 if __name__ == '__main__':
     main()
