@@ -1,0 +1,3 @@
+[submodule "pyGraph"]
+	path = pyGraph
+	url = ../../pyqtgraph/pyqtgraph-core.git
