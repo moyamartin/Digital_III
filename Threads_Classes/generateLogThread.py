@@ -8,7 +8,8 @@ import time
 class GenerateLogThread(QThread):
     actualTime = None
     f = None
-    data = None
+    data_y = None
+    data_x = None
 
     def __init__(self):
         QThread.__init__(self)
@@ -16,11 +17,12 @@ class GenerateLogThread(QThread):
     def __del__(self):
         self.wait()
 
-    def setData(self, data):
-        self.data = data
+    def set_data(self, datay, datax):
+        self.data_y = datay
+        self.data_x = datax
 
     def run(self):
-        self.actualTime = time.strftime("%dd-%mm-%yyyy-%hh-%mm-%ss")
-        f = open('dataplot - ' + self.actualTime, w)
-        f.write(str(self.data))
+        self.actualTime = time.strftime("%d-%m-%y-%H-%M-%S")
+        f = open('dataplot - ' + self.actualTime, 'w')
+        f.write(str(self.data_y) + '\n' + str(self.data_x))
         f.close()
