@@ -7,22 +7,23 @@ import time
 import maindesign
 import errorForm
 import ackForm
+import aboutForm
 import serial
 
 
 class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     serialPort = None
     actionPuertos = []
-    readLineT = None
+
     dialogErrorForm = None
     dialogAckForm = None
+    dialogAbout = None
+
     readThread = None
     writeFileThread = None
-    timer = None
+
     datos_x = []
     datos_y = []
-    k = 0
-    j = 0
     start_time = 0
 
     def __init__(self):
@@ -40,15 +41,17 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         # Creamos un objeto del hilo de lectura de datos
         self.readThread = dataThread.DataThread(self.serialPort)
         self.connect(self.readThread, SIGNAL('update_plot(PyQt_PyObject, PyQt_PyObject)'), self.update_plot)
+        self.connect(self.readThread, SIGNAL('finished()'), self.close_port)
 
         # Instanciamos el objeto de la clase CheckPortsThread()
         # Esta se encarga de detectar los puertos abiertos de los dispositivos conectados por USB
         self.setDevices = checkPortsThread.CheckPortsThread()
         self.connect(self.setDevices, SIGNAL('update_ports(PyQt_PyObject)'), self.update_combo)
+        self.connect(self.setDevices, SIGNAL('finished()'), self.conectar_dispositivo)
 
         # Otorgamos función a los botones conectar y desconectar
         # Su función es bastante intuitiva
-        self.pushDesconectar.clicked.connect(self.close_connection)
+        self.pushDesconectar.clicked.connect(self.end_readings)
         self.pushConectar.clicked.connect(self.conectar_dispositivo)
 
         # Al iniciar la aplicación queremos que comienze a detectar los dispositivos automáticamente
@@ -56,31 +59,45 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
 
         self.writeFileThread = generateLogThread.GenerateLogThread()
 
-        # self.connect(self.writeFileThread, SIGNAL("finished()"), pr)
+        self.plot_1.setLabel('left', 'Temperatura', 'C')
 
-    def close_connection(self):
-        self.writeFileThread.set_data(self.datos_y, self.datos_x)
-        self.writeFileThread.start()
+        self.plot_1.setLabel('bottom', 'Tiempo', 'S')
 
-        self.readThread.quit()
+        self.actionAbout.triggered.connect(self.open_about)
+
+    def open_about(self):
+        if self.dialogAbout is None:
+            self.dialogAbout = aboutForm.AboutForm()
+        self.dialogAbout.show()
+
+    def close_port(self):
         self.serialPort.close()
-
-        del self.datos_y[:]
-        del self.datos_x[:]
 
         self.pushConectar.setEnabled(True)
         self.pushDesconectar.setEnabled(False)
         self.setDevices.start()
 
+    def end_readings(self):
+        self.writeFileThread.set_data(self.datos_y, self.datos_x)
+        self.writeFileThread.start()
+
+        self.readThread.set_stop()
+        self.readThread.quit()
+
+    def kill_set_devices(self):
+        # Queremos terminar la detección de los dispositivos porque ya se eligió a cual conectarse
+        self.setDevices.set_stop()
+        self.setDevices.quit()
+
     # conectar_dispositivo() es llamado al pulsar el botón conectar
     def conectar_dispositivo(self):
 
-        # Queremos terminar la detección de los dispositivos porque ya se eligió a cual conectarse
-        self.setDevices.quit()
+        self.readThread.set_timer()
+
+        del self.datos_y[:]
+        del self.datos_x[:]
 
         self.plot_1.clear()
-
-
 
         # PUERTO_DISPOSITIVO contiene el nombre del puerto serie referida al dispositivo
         # Se obtiene a través del comboBox donde se presentan los puertos disponibles
@@ -97,17 +114,8 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         # CORRECTO: presenta una ventana de autenticación (ackForm) y ejecuta el thread de lectura (readThread.Start())
         try:
             # Definimos constantes del puerto seria (puerto, baudrate, bytesize, paridad, bits de stop, timeout)
-            self.serialPort.port = PUERTO_DISPOSITIVO
-            self.serialPort.baudrate = PUERTO_BAUDRATE
-            self.bytesize = serial.EIGHTBITS
-            self.parity = serial.PARITY_NONE
-            self.stopBits = serial.STOPBITS_ONE
-            self.timeout = 100
-            self.write_timeout = 100
-
-            # Abre el puerto serie
-            self.serialPort.open()
-
+            self.serialPort = serial.Serial(PUERTO_DISPOSITIVO, PUERTO_BAUDRATE, serial.EIGHTBITS, serial.PARITY_NONE,
+                                            serial.STOPBITS_ONE, 100, 100)
             # Muestra la ventana de autenticación
             if self.dialogAckForm is None:
                 self.dialogAckForm = ackForm.AckForm()
@@ -160,4 +168,3 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.datos_y = temp
         self.datos_x.append(tiempo)
         self.plot_1.plot(self.datos_x, self.datos_y, pen=(255, 0, 0), symbol=None)
-        self.j += self.j

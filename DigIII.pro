@@ -22,4 +22,6 @@ FORMS += \
     UI_files/dialogack.ui \
     UI_files/mainwindow.ui \
     UI_files/dialogerror.ui \
-    UI_files/dialogfile.ui
+    UI_files/dialogfile.ui \
+    UI_files/configdialog.ui \
+    UI_files/aboutdialog.ui

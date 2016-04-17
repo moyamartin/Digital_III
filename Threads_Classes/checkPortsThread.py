@@ -8,6 +8,9 @@ import glob
 
 
 class CheckPortsThread(QThread):
+
+    non_stop = True
+
     def __init__(self):
         QThread.__init__(self)
 
@@ -46,19 +49,26 @@ class CheckPortsThread(QThread):
                 pass
         return result
 
+    def set_stop(self):
+        self.non_stop = False
+
+
+
     # Esta es la lógica de thread
     def run(self):
+        self.non_stop = True
 
         # La idea es que se corra constantemente y nunca se termine automáticamente el proceso
         # Por eso se puso en un thread para no tildar la aplicación
-        while True:
-            puertos = self.search_ports()
+        while self.non_stop:
+            if self.non_stop:
+                puertos = self.search_ports()
 
-            # Si no hay puertos disponibles devuelve "No hay dispositivos conectados"
-            if not puertos:
-                puerto = 'No hay dispositivos conectados'
-                self.emit(SIGNAL('update_ports(PyQt_PyObject)'), puerto)
+                # Si no hay puertos disponibles devuelve "No hay dispositivos conectados"
+                if not puertos:
+                    puerto = 'No hay dispositivos conectados'
+                    self.emit(SIGNAL('update_ports(PyQt_PyObject)'), puerto)
 
-            # Caso opuesto: devuelve la lista de los puertos disponibles
-            else:
-                self.emit(SIGNAL('update_ports(PyQt_PyObject)'), puertos)
+                # Caso opuesto: devuelve la lista de los puertos disponibles
+                else:
+                    self.emit(SIGNAL('update_ports(PyQt_PyObject)'), puertos)

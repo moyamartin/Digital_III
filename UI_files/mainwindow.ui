@@ -253,6 +253,7 @@
     <property name="title">
      <string>Archivo</string>
     </property>
+    <addaction name="actionAbrir_datos"/>
     <addaction name="actionNueva_ventana"/>
     <addaction name="actionSalir"/>
    </widget>
@@ -260,14 +261,13 @@
     <property name="title">
      <string>Herramientas</string>
     </property>
-    <addaction name="actionConectar_dispositivo"/>
     <addaction name="actionConfiguraci_n"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
      <string>Ayuda</string>
     </property>
-    <addaction name="actionAcerca_de_Termoplot"/>
+    <addaction name="actionAbout"/>
     <addaction name="actionContenido"/>
    </widget>
    <addaction name="menuArchivo"/>
@@ -304,7 +304,7 @@
     <string>Conectar dispositivo</string>
    </property>
   </action>
-  <action name="actionAcerca_de_Termoplot">
+  <action name="actionAbout">
    <property name="text">
     <string>Acerca de ADN-Plot</string>
    </property>
@@ -330,6 +330,11 @@
   <action name="actionNueva_ventana">
    <property name="text">
     <string>Nueva ventana</string>
+   </property>
+  </action>
+  <action name="actionAbrir_datos">
+   <property name="text">
+    <string>Abrir datos</string>
    </property>
   </action>
  </widget>
