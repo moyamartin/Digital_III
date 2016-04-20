@@ -11,7 +11,7 @@ class DataThread(QThread):
     start_time = 0
     actual_time = 0
     non_stop = True
-
+    aux = 0
     def __init__(self, serial_port):
         QThread.__init__(self)
         self.serial_port = serial_port
@@ -39,7 +39,16 @@ class DataThread(QThread):
         while self.non_stop:
             if self.non_stop:
                 try:
-                    self.data.append(int(self.serial_port.readline()))
+                    self.aux = self.serial_port.readline()
+                    try:
+                        self.data.append(int(self.aux))
+                    except ValueError:
+                        if len(self.data) > 0:
+                            self.aux = self.data(len(self.data) - 1)
+                            self.data.append(self.aux)
+                        elif len(self.data) == 0:
+                            self.data.append(0)
+                    # self.data.append(int(self.serial_port.readline()))
                     if self.actual_time == 0:
                         self.emit(SIGNAL('update_plot(PyQt_PyObject, PyQt_PyObject)'), self.data, self.actual_time)
                         self.actual_time = time.time() - self.start_time

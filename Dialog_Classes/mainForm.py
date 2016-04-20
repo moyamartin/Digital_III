@@ -106,7 +106,7 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         PUERTO_DISPOSITIVO = str(self.comboPorts.itemText(self.comboPorts.currentIndex()))
 
         # PUERTO_BAUDRATE contiene el baudrate que seleccionamos dentro del comboBox del baudrate
-        PUERTO_BAUDRATE = self.comboData.itemText(self.comboData.currentIndex()).toInt(10)[0]
+        PUERTO_BAUDRATE = int(self.comboData.itemText(self.comboData.currentIndex()))
 
         # Se intenta conectar al dispositivo, como puede llegar a devolver una excepción se procede de la siguiente
         # manera
@@ -115,7 +115,7 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         try:
             # Definimos constantes del puerto seria (puerto, baudrate, bytesize, paridad, bits de stop, timeout)
             self.serialPort = serial.Serial(PUERTO_DISPOSITIVO, PUERTO_BAUDRATE, serial.EIGHTBITS, serial.PARITY_NONE,
-                                            serial.STOPBITS_ONE, 100, 100)
+                                            serial.STOPBITS_ONE, 10, 10)
             # Muestra la ventana de autenticación
             if self.dialogAckForm is None:
                 self.dialogAckForm = ackForm.AckForm()
