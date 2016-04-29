@@ -22,9 +22,26 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     readThread = None
     writeFileThread = None
 
+    # Datos a plotear
     datos_x = []
     datos_y = []
-    start_time = 0
+    error = []
+    patron = []
+    signal = []
+
+    # Buffer interno de 300 valores
+    buffer_x = []
+    buffer_y = []
+    buffer_patron = []
+    buffer_error = []
+    buffer_signal = []
+
+    # Colores de las señales
+    datos_color = (255, 0, 0)
+    error_color = (0, 255, 0)
+    patron_color = (0, 0, 255)
+    signal_color = (255, 255, 0)
+
 
     def __init__(self):
         # Super() es usado para referirse a clases padres sin nombrarla explícitamente
@@ -41,6 +58,7 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         # Creamos un objeto del hilo de lectura de datos
         self.readThread = dataThread.DataThread(self.serialPort)
         self.connect(self.readThread, SIGNAL('update_plot(PyQt_PyObject, PyQt_PyObject)'), self.update_plot)
+        self.connect(self.readThread, SIGNAL('clear_plot(PyQt_PyObject, PyQt_PyObject)'), self.clear_plot)
         self.connect(self.readThread, SIGNAL('finished()'), self.close_port)
 
         # Instanciamos el objeto de la clase CheckPortsThread()
@@ -60,10 +78,83 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.writeFileThread = generateLogThread.GenerateLogThread()
 
         self.plot_1.setLabel('left', 'Temperatura', 'C')
-
         self.plot_1.setLabel('bottom', 'Tiempo', 'S')
+        self.plot_1.setXRange(0, 3, 0.05)
+        self.plot_1.setYRange(0, 10, 0.05)
 
         self.actionAbout.triggered.connect(self.open_about)
+        self.actionAbrir_datos.triggered.connect(self.open_plot)
+
+        self.checkBox_datos.setChecked(True)
+        self.checkBox_error.setChecked(True)
+        self.checkBox_patron.setChecked(True)
+        self.checkBox_pid.setChecked(True)
+
+        self.checkBox_datos.clicked.connect(self.modify_plot)
+        self.checkBox_error.clicked.connect(self.modify_plot)
+        self.checkBox_pid.clicked.connect(self.modify_plot)
+        self.checkBox_patron.clicked.connect(self.modify_plot)
+
+    def modify_plot(self):
+        aux_datos = self.datos_y
+        aux_error = self.error
+        aux_pid = self.signal
+        aux_patron = self.patron
+        if self.checkBox_datos.isChecked() is False:
+            aux_datos = []
+        if self.checkBox_error.isChecked() is False:
+            aux_error = []
+        if self.checkBox_patron.isChecked() is False:
+            aux_patron = []
+        if self.checkBox_pid.isChecked() is False:
+            aux_pid = []
+
+        self.plot_1.clear()
+        self.update_plot(aux_datos, self.datos_x)
+        self.plot_1.autoRange()
+
+        del aux_datos
+        del aux_error
+        del aux_pid
+        del aux_patron
+
+
+    def open_plot(self):
+
+
+        del self.datos_x[:]
+        del self.datos_y[:]
+
+        file_name = QtGui.QFileDialog.getOpenFileName(self, 'Abrir archivo de datos', '/home')
+        try:
+            f = open(file_name, 'r')
+
+            aux = f.readline().split(',')
+            for i in range(0, len(aux) - 1):
+                self.datos_x.append(float(aux[i]))
+
+            aux = f.readline().split(',')
+            for i in range(0, len(aux) - 1):
+                self.datos_y.append(float(aux[i]))
+
+            f.close()
+
+            self.plot_1.clear()
+            self.update_plot(self.datos_y, self.datos_x)
+            self.plot_1.autoRange()
+
+            self.checkBox_datos.setEnabled(True)
+            self.checkBox_datos.setChecked(True)
+            self.checkBox_error.setEnabled(True)
+            self.checkBox_error.setChecked(True)
+            self.checkBox_patron.setEnabled(True)
+            self.checkBox_patron.setChecked(True)
+            self.checkBox_pid.setEnabled(True)
+            self.checkBox_pid.setChecked(True)
+
+        except IOError:
+            pass
+
 
     def open_about(self):
         if self.dialogAbout is None:
@@ -71,15 +162,22 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.dialogAbout.show()
 
     def close_port(self):
+        self.datos_x.extend(self.buffer_x)
+        self.datos_y.extend(self.buffer_y)
+        self.writeFileThread.set_data(self.datos_x, self.datos_y)
+        self.writeFileThread.start()
+
+        self.readThread.flush()
         self.serialPort.close()
+
+        self.plot_1.setMouseEnabled(True, True)
+
 
         self.pushConectar.setEnabled(True)
         self.pushDesconectar.setEnabled(False)
         self.setDevices.start()
 
     def end_readings(self):
-        self.writeFileThread.set_data(self.datos_y, self.datos_x)
-        self.writeFileThread.start()
 
         self.readThread.set_stop()
         self.readThread.quit()
@@ -92,12 +190,16 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     # conectar_dispositivo() es llamado al pulsar el botón conectar
     def conectar_dispositivo(self):
 
+        del self.datos_x[:]
+        del self.datos_y[:]
+
+        self.plot_1.setXRange(0, 3, 0.05)
+        self.plot_1.setYRange(0, 10, 0.05)
+
         self.readThread.set_timer()
 
-        del self.datos_y[:]
-        del self.datos_x[:]
-
         self.plot_1.clear()
+        self.plot_1.setMouseEnabled(False, False)
 
         # PUERTO_DISPOSITIVO contiene el nombre del puerto serie referida al dispositivo
         # Se obtiene a través del comboBox donde se presentan los puertos disponibles
@@ -127,9 +229,18 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
             # Inicializa el hilo de lectura
             self.readThread.start()
 
+            self.checkBox_datos.setEnabled(False)
+            self.checkBox_error.setEnabled(False)
+            self.checkBox_pid.setEnabled(False)
+            self.checkBox_patron.setEnabled(False)
+
+            self.checkBox_datos.setChecked(True)
+            self.checkBox_error.setChecked(True)
+            self.checkBox_patron.setChecked(True)
+            self.checkBox_pid.setChecked(True)
+
             self.pushConectar.setEnabled(False)
             self.pushDesconectar.setEnabled(True)
-            self.start_time = time.time()
         except (OSError, serial.SerialException):
             if self.dialogErrorForm is None:
                 self.dialogErrorForm = errorForm.ErrorForm()
@@ -164,7 +275,20 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
                 self.comboPorts.removeItem(k)
 
     # Actualiza la gráfica
-    def update_plot(self, temp, tiempo):
-        self.datos_y = temp
-        self.datos_x.append(tiempo)
-        self.plot_1.plot(self.datos_x, self.datos_y, pen=(255, 0, 0), symbol=None)
+    def update_plot(self, temp, tiempo): # , patron, signal):
+        # self.buffer_patron = patron
+        # self.buffer_señal = signal
+        self.buffer_x = tiempo
+        self.buffer_y = temp
+        if len(self.buffer_y) != 0:
+            self.plot_1.plot(self.buffer_x, self.buffer_y, pen=(self.datos_color[0], self.datos_color[1], self.datos_color[2]), symbol=None)
+        else:
+            self.plot_1.plot([], self.buffer_y, pen=(255, 0, 0), symbol=None)
+
+    def clear_plot(self, tmp, time):
+        self.datos_x.extend(time)
+        self.datos_y.extend(tmp)
+        self.plot_1.setXRange(self.buffer_x[len(self.buffer_x) - 1], self.buffer_x[len(self.buffer_x) - 1] + 3, 0.05)
+        self.readThread.flush()
+        self.plot_1.clear()
+

@@ -17,12 +17,18 @@ class GenerateLogThread(QThread):
     def __del__(self):
         self.wait()
 
-    def set_data(self, datay, datax):
+    def set_data(self, datax, datay):
         self.data_y = datay
         self.data_x = datax
 
     def run(self):
         self.actualTime = time.strftime("%d-%m-%y-%H-%M-%S")
-        f = open('dataplot - ' + self.actualTime, 'w')
-        f.write(str(self.data_y) + '\n' + str(self.data_x))
+        f = open('dataplot - ' + self.actualTime + '.data', 'w')
+
+        for i in range(0, len(self.data_x)):
+            f.write(str(self.data_x[i])+',')
+        f.write('\n')
+        for i in range(0, len(self.data_y)):
+            f.write(str(self.data_y[i]) + ',')
+
         f.close()

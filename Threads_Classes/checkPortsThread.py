@@ -19,8 +19,7 @@ class CheckPortsThread(QThread):
 
     # search_ports() Se encarga de detectar que puertos están disponibles (Abiertos en este caso)
     # se modularizó para diferentes OS (OSX, Windows, Linux)
-    @staticmethod
-    def search_ports():
+    def search_ports(self):
 
         # Si la plataforma es de windows ("win") toma los puertos de COMi para i entre 1 y 256
         if sys.platform.startswith("win"):
@@ -33,7 +32,6 @@ class CheckPortsThread(QThread):
         elif sys.platform.startswith('darwin'):
             ports = glob.glob('/dev/tty.*')
         else:
-
             # En caso de que la plataforma no esté soportada, tira error por la línea de comandos
             raise EnvironmentError('Unsupported platform')
 
@@ -42,7 +40,7 @@ class CheckPortsThread(QThread):
         result = []
         for port in ports:
             try:
-                s = serial.Serial(port)
+                s = serial.Serial(port, rtscts=True)
                 s.close()
                 result.append(port)
             except (OSError, serial.SerialException):
@@ -51,8 +49,6 @@ class CheckPortsThread(QThread):
 
     def set_stop(self):
         self.non_stop = False
-
-
 
     # Esta es la lógica de thread
     def run(self):
@@ -72,3 +68,4 @@ class CheckPortsThread(QThread):
                 # Caso opuesto: devuelve la lista de los puertos disponibles
                 else:
                     self.emit(SIGNAL('update_ports(PyQt_PyObject)'), puertos)
+                self.msleep(100)
