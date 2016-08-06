@@ -69,7 +69,6 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
 
         # Otorgamos función a los botones conectar y desconectar
         # Su función es bastante intuitiva
-        self.pushDesconectar.clicked.connect(self.end_readings)
         self.pushConectar.clicked.connect(self.conectar_dispositivo)
 
         # Al iniciar la aplicación queremos que comienze a detectar los dispositivos automáticamente
@@ -80,7 +79,7 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.plot_1.setLabel('left', 'Temperatura', 'C')
         self.plot_1.setLabel('bottom', 'Tiempo', 'S')
         self.plot_1.setXRange(0, 3, 0.05)
-        self.plot_1.setYRange(0, 10, 0.05)
+        self.plot_1.setYRange(0, 50, 0.05)
 
         self.actionAbout.triggered.connect(self.open_about)
         self.actionAbrir_datos.triggered.connect(self.open_plot)
@@ -170,14 +169,23 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.readThread.flush()
         self.serialPort.close()
 
+
+        if len(self.datos_y) > 0:
+            self.plot_1.setXRange(0, self.datos_x[len(self.datos_x) -1])
+            self.update_plot(self.datos_y, self.datos_x)
+        else:
+            self.plot_1.clear()
         self.plot_1.setMouseEnabled(True, True)
 
-
+        self.comboPorts.setEnabled(True)
+        self.comboData.setEnabled(True)
         self.pushConectar.setEnabled(True)
-        self.pushDesconectar.setEnabled(False)
         self.setDevices.start()
 
     def end_readings(self):
+        self.pushConectar.setText("Conectar")
+        self.pushConectar.clicked.disconnect()
+        self.pushConectar.clicked.connect(self.conectar_dispositivo)
 
         self.readThread.set_stop()
         self.readThread.quit()
@@ -194,7 +202,7 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         del self.datos_y[:]
 
         self.plot_1.setXRange(0, 3, 0.05)
-        self.plot_1.setYRange(0, 10, 0.05)
+        self.plot_1.setYRange(0, 100, 0.05)
 
         self.readThread.set_timer()
 
@@ -234,13 +242,17 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
             self.checkBox_pid.setEnabled(False)
             self.checkBox_patron.setEnabled(False)
 
+            self.comboPorts.setEnabled(False)
+            self.comboData.setEnabled(False)
+
             self.checkBox_datos.setChecked(True)
             self.checkBox_error.setChecked(True)
             self.checkBox_patron.setChecked(True)
             self.checkBox_pid.setChecked(True)
 
-            self.pushConectar.setEnabled(False)
-            self.pushDesconectar.setEnabled(True)
+            self.pushConectar.setText("Desconectar")
+            self.pushConectar.clicked.disconnect()
+            self.pushConectar.clicked.connect(self.end_readings)
         except (OSError, serial.SerialException):
             if self.dialogErrorForm is None:
                 self.dialogErrorForm = errorForm.ErrorForm()
@@ -291,4 +303,5 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.plot_1.setXRange(self.buffer_x[len(self.buffer_x) - 1], self.buffer_x[len(self.buffer_x) - 1] + 3, 0.05)
         self.readThread.flush()
         self.plot_1.clear()
+
 

@@ -40,9 +40,10 @@ class CheckPortsThread(QThread):
         result = []
         for port in ports:
             try:
-                s = serial.Serial(port, rtscts=True)
-                s.close()
-                result.append(port)
+                if port != "/dev/ttyprintk":
+                    s = serial.Serial(port, rtscts=True, dsrdtr=True)
+                    s.close()
+                    result.append(port)
             except (OSError, serial.SerialException):
                 pass
         return result
