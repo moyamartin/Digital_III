@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from PyQt4.QtCore import QThread, SIGNAL
-import time
 import serial
-import string
+
 
 
 class DataThread(QThread):
@@ -65,6 +64,7 @@ class DataThread(QThread):
                                 self.actual_time += 0.01
                                 self.time.append(self.actual_time)
                                 self.emit(SIGNAL('update_plot(PyQt_PyObject, PyQt_PyObject)'), self.data, self.time)
+                                self.msleep(5)
                                 if len(self.data) % 300 == 0:
                                     self.aux_x = self.time
                                     self.aux_y = self.data

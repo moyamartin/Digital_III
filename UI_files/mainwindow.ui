@@ -64,114 +64,6 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="label_2">
-        <property name="minimumSize">
-         <size>
-          <width>67</width>
-          <height>17</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>67</width>
-          <height>17</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Baudrate:</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QComboBox" name="comboData">
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="currentIndex">
-         <number>6</number>
-        </property>
-        <item>
-         <property name="text">
-          <string>110</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>300</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>600</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>1200</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>2400</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>4800</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>9600</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>14400</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>19200</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>38400</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>57600</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>115200</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>128000</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>256000</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="pushConectar">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -199,37 +91,6 @@
         </property>
         <property name="text">
          <string>Conectar</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushDesconectar">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>100</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Desconectar</string>
-        </property>
-        <property name="flat">
-         <bool>false</bool>
         </property>
        </widget>
       </item>
@@ -383,7 +244,7 @@
      <x>0</x>
      <y>0</y>
      <width>740</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuArchivo">
@@ -391,23 +252,14 @@
      <string>Archivo</string>
     </property>
     <addaction name="actionAbrir_datos"/>
-    <addaction name="actionSalir"/>
-   </widget>
-   <widget class="QMenu" name="menuHerramientas">
-    <property name="title">
-     <string>Herramientas</string>
-    </property>
-    <addaction name="actionConfiguraci_n"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">
      <string>Ayuda</string>
     </property>
     <addaction name="actionAbout"/>
-    <addaction name="actionContenido"/>
    </widget>
    <addaction name="menuArchivo"/>
-   <addaction name="menuHerramientas"/>
    <addaction name="menuAyuda"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

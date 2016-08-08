@@ -2,251 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d65f3eb7-dac6-400a-a66d-87ad62d367fb" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/python2_3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/metaarray/readMeta.m" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/FillBetweenItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/metaarray/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotItem/plotConfigTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/ptime.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/exportDialogTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/console/template_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/imageview/ImageViewTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/MultiPlotItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/library/Display.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/parameterTypes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotCurveItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/tests/test_lru_cache.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/PlotData.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/VTickGroup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/Qt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/MeshData.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ScatterPlotItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartCtrlTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/library/common.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/eq.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/tests/test_ref_cycles.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/ColorButton.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/Node.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/GradientWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/FeedbackButton.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/Vector.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/ComboBox.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ErrorBarItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/functions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/TransformGuiTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartCtrlTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ScaleBar.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/InfiniteLine.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/console/template.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/imageview/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/RemoteGraphicsView.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/DataTreeWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GridItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/mouseEvents.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/tests/test_svg.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotItem/plotConfigTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GraphicsWidgetAnchor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/axisCtrlTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLSurfacePlotItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/tests/test_tablewidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/axisCtrlTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/Matplotlib.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/ScatterPlotWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/console/Console.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/Exporter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/MatplotlibWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/PrintExporter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLMeshItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/GLViewWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/RawImageWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/ViewBox.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/console/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ItemGroup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/tests/test_parametertypes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/tests/test_exit_crash.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/MultiPlotWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/JoystickButton.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exceptionHandling.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/CanvasTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/GLGraphicsItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/library/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/console/template_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotDataItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/console/CmdInput.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GraphicsObject.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pgcollections.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/CheckTable.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/CanvasItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/colorama/winterm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ImageItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/CSVExporter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/reload.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/exportDialog.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/console/template_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotItem/PlotItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/tests/test_functions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/tests/test_csv.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLGridItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/LinearRegionItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/cprint.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/HDF5Exporter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/tests/uictest.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/Terminal.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/icons.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/mutex.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/exportDialogTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/configfile.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/SystemSolver.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/FileDialog.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/colorama/win32.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/Parameter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/library/functions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLScatterPlotItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/pixmapData_2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/imageview/ImageViewTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ROI.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/TransformGuiTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/garbage_collector.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/CanvasTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLVolumeItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/AxisItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartCtrlTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/ParameterItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/metaarray/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotItem/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/colorama/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/SpinBox.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/LayoutWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/shaders.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotItem/plotConfigTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/IsocurveItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/tests/test_ViewBox.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/CanvasTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/ctrl.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GradientEditorItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/numpy_fix.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/exportDialogTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/LabelItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/exportDialogTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/library/Filters.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/ordereddict.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/dockarea/tests/test_dock.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/GraphicsLayoutWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/Flowchart.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/multiprocess/bootstrap.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/BusyCursor.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/ParameterTree.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/imageview/ImageViewTemplate_pyqt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/ValueLabel.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/colormap.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/glInfo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/PlotItem/plotConfigTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/Point.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/TextItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartCtrlTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/ColorMapWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/PlotWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/colorama/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/axisCtrlTemplate_pyqt5.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/NodeLibrary.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/colorama/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/debug.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/multiprocess/remoteproxy.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/multiprocess/parallelizer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GraphicsWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/ThreadsafeTimer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/Transform3D.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/dockarea/Dock.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLImageItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/tests/test_srttransform3d.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/tests/test_stability.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/multiprocess/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/frozenSupport.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/DataFilterWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/tests/test_combobox.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/imageview/ImageView.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/auto.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLBarGraphItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/TransformGuiTemplate.ui" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/Canvas.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/imageview/ImageViewTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/TableWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/pil_fix.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/dockarea/DockDrop.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/axisCtrlTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLBoxItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/PathButton.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/GraphicsScene/GraphicsScene.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/CurvePoint.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/library/Operators.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/LegendItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/lock.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ButtonItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GraphItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/TransformGuiTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/tests/test_ScatterPlotItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GraphicsLayout.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/ParameterSystem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/CanvasTemplate_pyside.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/parametertree/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GradientLegend.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/BarGraphItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/tests/test_GraphicsItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/GraphicsItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/dockarea/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/ImageExporter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/UIGraphicsItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/tests/test_qt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLLinePlotItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/FlowchartGraphicsView.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/VerticalLabel.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/dockarea/DockArea.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/pixmapData_3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/metaarray/MetaArray.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/HistogramLUTItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/SRTTransform3D.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/SignalProxy.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ViewBox/ViewBoxMenu.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/util/lru_cache.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/TreeWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/flowchart/library/Data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/HistogramLUTWidget.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/GraphicsView.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/units.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/dockarea/Container.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/opengl/items/GLAxisItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/WidgetGroup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/canvas/CanvasManager.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsWindows.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/multiprocess/processes.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/graphicsItems/ArrowItem.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/widgets/ProgressDialog.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/exporters/SVGExporter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/SRTTransform.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/pixmaps/compile.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pyGraph/imageview/tests/test_imageview.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Threads_Classes/checkPortsThread.py" afterPath="$PROJECT_DIR$/Threads_Classes/checkPortsThread.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pyGraph" afterPath="$PROJECT_DIR$/pyGraph" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dialog_Classes/mainForm.py" afterPath="$PROJECT_DIR$/Dialog_Classes/mainForm.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Threads_Classes/dataThread.py" afterPath="$PROJECT_DIR$/Threads_Classes/dataThread.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI_files/aboutdialog.ui" afterPath="$PROJECT_DIR$/UI_files/aboutdialog.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI_files/mainwindow.ui" afterPath="$PROJECT_DIR$/UI_files/mainwindow.ui" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Plot_Software.iml" afterPath="$PROJECT_DIR$/.idea/Plot_Software.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dialog_Classes/aboutdesign.py" afterPath="$PROJECT_DIR$/Dialog_Classes/aboutdesign.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dialog_Classes/dialogdesign.py" afterPath="$PROJECT_DIR$/Dialog_Classes/dialogdesign.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dialog_Classes/mainForm.py" afterPath="$PROJECT_DIR$/Dialog_Classes/mainForm.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dialog_Classes/maindesign.py" afterPath="$PROJECT_DIR$/Dialog_Classes/maindesign.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Threads_Classes/dataThread.py" afterPath="$PROJECT_DIR$/Threads_Classes/dataThread.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <ignored path="Plot_Software.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -257,7 +23,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -270,8 +35,8 @@
       <file leaf-file-name="dataThread.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Threads_Classes/dataThread.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="67" column="51" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
+            <state relative-caret-position="1173">
+              <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
               <folding>
                 <element signature="e#25#65#0" expanded="true" />
               </folding>
@@ -279,12 +44,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mainForm.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="mainForm.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dialog_Classes/mainForm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="maindesign.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dialog_Classes/maindesign.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1683">
+              <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="313" column="27" selection-start-line="313" selection-start-column="27" selection-end-line="313" selection-end-column="27" />
+              <folding>
+                <element signature="e#506#529#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -310,21 +97,21 @@
         <option value="$PROJECT_DIR$/Dialog_Classes/ackForm.py" />
         <option value="$PROJECT_DIR$/Dialog_Classes/errorForm.py" />
         <option value="$PROJECT_DIR$/Threads_Classes/clearplotThread.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/Threads_Classes/generateLogThread.py" />
         <option value="$PROJECT_DIR$/Dialog_Classes/aboutForm.py" />
         <option value="$PROJECT_DIR$/Threads_Classes/checkPortsThread.py" />
-        <option value="$PROJECT_DIR$/Threads_Classes/dataThread.py" />
         <option value="$PROJECT_DIR$/Dialog_Classes/aboutdesign.py" />
+        <option value="$PROJECT_DIR$/Threads_Classes/dataThread.py" />
         <option value="$PROJECT_DIR$/Dialog_Classes/mainForm.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="24" />
-    <option name="width" value="1368" />
-    <option name="height" value="721" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -355,27 +142,27 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
+              <option name="myItemId" value="Digital_III" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
+              <option name="myItemId" value="Digital_III" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
+              <option name="myItemId" value="Digital_III" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
+              <option name="myItemId" value="Digital_III" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
+              <option name="myItemId" value="Digital_III" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -385,43 +172,15 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
+              <option name="myItemId" value="Digital_III" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Threads_Classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
+              <option name="myItemId" value="Digital_III" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Dialog_Classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Plot_Software" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -434,6 +193,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -613,26 +373,26 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1368" height="721" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20131771" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25682184" sideWeight="0.5080527" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2555205" sideWeight="0.51098096" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25682184" sideWeight="0.4919473" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3964687" sideWeight="0.4941435" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2555205" sideWeight="0.48901904" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32744783" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39589906" sideWeight="0.4941435" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -654,16 +414,6 @@
           <line>8</line>
           <option name="timeStamp" value="28" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/Dialog_Classes/mainForm.py</url>
-          <line>221</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/Dialog_Classes/mainForm.py</url>
-          <line>294</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -672,7 +422,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="41" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -798,13 +548,7 @@
     <entry file="file://$PROJECT_DIR$/dataplot - 14-04-16-23-33-33" />
     <entry file="file://$PROJECT_DIR$/dataplot - 14-04-16-23-42-05" />
     <entry file="file://$PROJECT_DIR$/dataplot - 14-04-16-23-59-54" />
-    <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-1247972723/PyQt4/QtCore/QThread.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2016.1/system/python_stubs/-1247972723/PyQt4/QtCore/QThread.py" />
     <entry file="file://$PROJECT_DIR$/Dialog_Classes/errordesign.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -837,34 +581,10 @@
     <entry file="file://$PROJECT_DIR$/dataplot - 24-04-16-01-31-41.data" />
     <entry file="file://$PROJECT_DIR$/dataplot - 24-04-16-01-37-31.data" />
     <entry file="file://$PROJECT_DIR$/Threads_Classes/clearplotThread.py" />
-    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/GraphicsItem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="443" column="0" selection-start-line="443" selection-start-column="0" selection-end-line="443" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/GraphicsObject.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/ViewBox/ViewBox.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="416" column="0" selection-start-line="416" selection-start-column="0" selection-end-line="416" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/PlotItem/PlotItem.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10746">
-          <caret line="603" column="23" selection-start-line="603" selection-start-column="23" selection-end-line="603" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/GraphicsItem.py" />
+    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/GraphicsObject.py" />
+    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/ViewBox/ViewBox.py" />
+    <entry file="file:///usr/lib/python2.7/dist-packages/pyqtgraph/graphicsItems/PlotItem/PlotItem.py" />
     <entry file="file://$PROJECT_DIR$/Dialog_Classes/errorForm.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -885,27 +605,8 @@
     <entry file="file://$PROJECT_DIR$/dataplot - 24-04-16-14-45-09.data" />
     <entry file="file://$PROJECT_DIR$/dataplot - 24-04-16-14-43-38.data" />
     <entry file="file://$PROJECT_DIR$/dataplot - 24-04-16-14-37-50.data" />
-    <entry file="file:///usr/lib/python2.7/dist-packages/serial/serialposix.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="313" column="0" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/serial/serialutil.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="179" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/serial/serialposix.py" />
+    <entry file="file:///usr/lib/python2.7/dist-packages/serial/serialutil.py" />
     <entry file="file://$PROJECT_DIR$/Threads_Classes/generateLogThread.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="292">
@@ -927,10 +628,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Dialog_Classes/aboutdesign.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="56" column="58" selection-start-line="56" selection-start-column="58" selection-end-line="56" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Threads_Classes/dataThread.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="67" column="51" selection-start-line="67" selection-start-column="51" selection-end-line="67" selection-end-column="51" />
+        <state relative-caret-position="1173">
+          <caret line="70" column="70" selection-start-line="70" selection-start-column="70" selection-end-line="70" selection-end-column="70" />
           <folding>
             <element signature="e#25#65#0" expanded="true" />
           </folding>
@@ -939,25 +647,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Dialog_Classes/maindesign.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-605">
-          <caret line="148" column="28" selection-start-line="148" selection-start-column="28" selection-end-line="148" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dialog_Classes/aboutdesign.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="56" column="62" selection-start-line="56" selection-start-column="62" selection-end-line="56" selection-end-column="62" />
+        <state relative-caret-position="1683">
+          <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Dialog_Classes/mainForm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="313" column="27" selection-start-line="313" selection-start-column="27" selection-end-line="313" selection-end-column="27" />
+          <folding>
+            <element signature="e#506#529#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
