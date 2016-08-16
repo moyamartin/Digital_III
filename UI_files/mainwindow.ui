@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>740</width>
-    <height>459</height>
+    <height>463</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -111,6 +111,9 @@
     </item>
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="sizeConstraint">
+       <enum>QLayout::SetMinimumSize</enum>
+      </property>
       <item>
        <widget class="QLabel" name="label_3">
         <property name="minimumSize">
@@ -137,13 +140,13 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>65</width>
+          <width>50</width>
           <height>23</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>65</width>
+          <width>50</width>
           <height>23</height>
          </size>
         </property>
@@ -159,13 +162,13 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>61</width>
+          <width>50</width>
           <height>23</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>61</width>
+          <width>50</width>
           <height>23</height>
          </size>
         </property>
@@ -181,13 +184,13 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>90</width>
+          <width>70</width>
           <height>23</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>90</width>
+          <width>70</width>
           <height>23</height>
          </size>
         </property>
@@ -203,13 +206,13 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>165</width>
+          <width>120</width>
           <height>23</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>165</width>
+          <width>120</width>
           <height>23</height>
          </size>
         </property>
@@ -225,7 +228,7 @@
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>248</width>
+          <width>138</width>
           <height>20</height>
          </size>
         </property>
@@ -234,7 +237,14 @@
      </layout>
     </item>
     <item>
-     <widget class="PlotWidget" name="plot_1"/>
+     <widget class="PlotWidget" name="plot_1">
+      <property name="minimumSize">
+       <size>
+        <width>720</width>
+        <height>360</height>
+       </size>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -262,7 +272,6 @@
    <addaction name="menuArchivo"/>
    <addaction name="menuAyuda"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionConfiguraci_n">
    <property name="text">
     <string>Configuracion</string>

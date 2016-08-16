@@ -3,7 +3,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import SIGNAL
 from Threads_Classes import checkPortsThread, dataThread, generateLogThread
-import time
 import maindesign
 import errorForm
 import ackForm
@@ -23,26 +22,31 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     writeFileThread = None
 
     # Datos a plotear
-    datos_x = []
-    datos_y = []
-    error = []
-    patron = []
-    signal = []
+    datos_tiempo = []
+    datos_temp = []
+    datos_error = []
+    datos_ref = []
+    datos_pid = []
 
     # Buffer interno de 300 valores
-    buffer_x = []
-    buffer_y = []
-    buffer_patron = []
+    buffer_tiempo = []
+    buffer_temp = []
+    buffer_ref = []
     buffer_error = []
-    buffer_signal = []
+    buffer_pid = []
 
     # Colores de las señales
-    datos_color = (255, 0, 0)
-    error_color = (0, 255, 0)
-    patron_color = (0, 0, 255)
-    signal_color = (255, 255, 0)
+    color_temp = (255, 0, 0)
+    color_error = (0, 255, 0)
+    color_ref = (0, 0, 255)
+    color_pid = (255, 255, 0)
 
+    curve_temp = None
+    curve_error = None
+    curve_ref = None
+    curve_pid = None
 
+    brush_temp = None
     def __init__(self):
         # Super() es usado para referirse a clases padres sin nombrarla explícitamente
         super(self.__class__, self).__init__()
@@ -57,8 +61,9 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
 
         # Creamos un objeto del hilo de lectura de datos
         self.readThread = dataThread.DataThread(self.serialPort)
-        self.connect(self.readThread, SIGNAL('update_plot(PyQt_PyObject, PyQt_PyObject)'), self.update_plot)
-        self.connect(self.readThread, SIGNAL('clear_plot(PyQt_PyObject, PyQt_PyObject)'), self.clear_plot)
+        self.connect(self.readThread, SIGNAL('update_plot(PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject,'
+                                             ' PyQt_PyObject, PyQt_PyObject, PyQt_PyObject, PyQt_PyObject)'),
+                     self.update_plot)
         self.connect(self.readThread, SIGNAL('finished()'), self.close_port)
 
         # Instanciamos el objeto de la clase CheckPortsThread()
@@ -79,7 +84,19 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.plot_1.setLabel('left', 'Temperatura', 'C')
         self.plot_1.setLabel('bottom', 'Tiempo', 'S')
         self.plot_1.setXRange(0, 3, 0.05)
-        self.plot_1.setYRange(0, 50, 0.05)
+        self.plot_1.setYRange(0, 100, 0.05)
+        self.plot_1.addLegend()
+        self.curve_temp = self.plot_1.plot(pen=(self.color_temp[0], self.color_temp[1], self.color_temp[2]),
+                                           name="Temperatura")
+        self.curve_error = self.plot_1.plot(pen=(self.color_error[0], self.color_error[1], self.color_error[2]),
+                                            name="Error")
+        self.curve_ref = self.plot_1.plot(pen=(self.color_ref[0], self.color_ref[1], self.color_ref[2]),
+                                          name="Referencia")
+        self.curve_pid = self.plot_1.plot(pen=(self.color_pid[0], self.color_pid[1], self.color_pid[2]),
+                                          name="PID")
+
+
+
 
         self.actionAbout.triggered.connect(self.open_about)
         self.actionAbrir_datos.triggered.connect(self.open_plot)
@@ -94,11 +111,13 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         self.checkBox_pid.clicked.connect(self.modify_plot)
         self.checkBox_patron.clicked.connect(self.modify_plot)
 
+        
+
     def modify_plot(self):
-        aux_datos = self.datos_y
-        aux_error = self.error
-        aux_pid = self.signal
-        aux_patron = self.patron
+        aux_datos = self.datos_temp
+        aux_error = self.datos_error
+        aux_pid = self.datos_pid
+        aux_patron = self.datos_ref
         if self.checkBox_datos.isChecked() is False:
             aux_datos = []
         if self.checkBox_error.isChecked() is False:
@@ -108,21 +127,25 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         if self.checkBox_pid.isChecked() is False:
             aux_pid = []
 
-        self.plot_1.clear()
-        self.update_plot(aux_datos, self.datos_x)
-        self.plot_1.autoRange()
+        self.curve_ref.setData([], [])
+        self.curve_error.setData([], [])
+        self.curve_pid.setData([], [])
+        self.curve_temp.setData([], [])
+        self.update_plot(aux_datos, aux_error, aux_pid, aux_patron, self.datos_tiempo, self.datos_tiempo,
+                         self.datos_tiempo, self.datos_tiempo)
 
         del aux_datos
         del aux_error
         del aux_pid
         del aux_patron
 
-
     def open_plot(self):
 
-
-        del self.datos_x[:]
-        del self.datos_y[:]
+        del self.datos_tiempo[:]
+        del self.datos_temp[:]
+        del self.datos_error[:]
+        del self.datos_pid[:]
+        del self.datos_ref[:]
 
         file_name = QtGui.QFileDialog.getOpenFileName(self, 'Abrir archivo de datos', '/home')
         try:
@@ -130,17 +153,33 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
 
             aux = f.readline().split(',')
             for i in range(0, len(aux) - 1):
-                self.datos_x.append(float(aux[i]))
+                self.datos_tiempo.append(float(aux[i]))
 
             aux = f.readline().split(',')
             for i in range(0, len(aux) - 1):
-                self.datos_y.append(float(aux[i]))
+                self.datos_temp.append(float(aux[i]))
+
+            aux = f.readline().split(',')
+            for i in range(0, len(aux) - 1):
+                self.datos_error.append(float(aux[i]))
+
+            aux = f.readline().split(',')
+            for i in range(0, len(aux) - 1):
+                self.datos_pid.append(float(aux[i]))
+
+            aux = f.readline().split(',')
+            for i in range(0, len(aux) - 1):
+                self.datos_ref.append(float(aux[i]))
 
             f.close()
 
-            self.plot_1.clear()
-            self.update_plot(self.datos_y, self.datos_x)
-            self.plot_1.autoRange()
+            self.curve_ref.setData([], [])
+            self.curve_error.setData([], [])
+            self.curve_pid.setData([], [])
+            self.curve_temp.setData([], [])
+            self.update_plot(self.datos_temp, self.datos_error, self.datos_pid, self.datos_ref, self.datos_tiempo,
+                             self.datos_tiempo, self.datos_tiempo, self.datos_tiempo)
+            self.plot_1.setXRange(0, self.datos_tiempo[len(self.datos_tiempo) - 1])
 
             self.checkBox_datos.setEnabled(True)
             self.checkBox_datos.setChecked(True)
@@ -154,31 +193,38 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         except IOError:
             pass
 
-
     def open_about(self):
         if self.dialogAbout is None:
             self.dialogAbout = aboutForm.AboutForm()
         self.dialogAbout.show()
 
     def close_port(self):
-        self.datos_x.extend(self.buffer_x)
-        self.datos_y.extend(self.buffer_y)
-        self.writeFileThread.set_data(self.datos_x, self.datos_y)
+        self.datos_tiempo.extend(self.buffer_tiempo)
+        self.datos_temp.extend(self.buffer_temp)
+        self.datos_pid.extend(self.buffer_pid)
+        self.datos_error.extend(self.buffer_error)
+        self.datos_ref.extend(self.buffer_ref)
+
+        self.writeFileThread.set_data(self.datos_temp, self.datos_error, self.datos_pid, self.datos_ref,
+                                      self.datos_tiempo)
         self.writeFileThread.start()
 
         self.readThread.flush()
         self.serialPort.close()
 
-
-        if len(self.datos_y) > 0:
-            self.plot_1.setXRange(0, self.datos_x[len(self.datos_x) -1])
-            self.update_plot(self.datos_y, self.datos_x)
+        if len(self.datos_temp) > 0:
+            self.update_plot(self.datos_temp, self.datos_error, self.datos_pid, self.datos_ref, self.datos_tiempo,
+                             self.datos_tiempo, self.datos_tiempo, self.datos_tiempo)
+            self.plot_1.setXRange(0, self.datos_tiempo[len(self.datos_tiempo) - 1])
         else:
-            self.plot_1.clear()
+            self.curve_ref.setData([], [])
+            self.curve_error.setData([], [])
+            self.curve_pid.setData([], [])
+            self.curve_temp.setData([], [])
+
         self.plot_1.setMouseEnabled(True, True)
 
         self.comboPorts.setEnabled(True)
-        self.comboData.setEnabled(True)
         self.pushConectar.setEnabled(True)
         self.setDevices.start()
 
@@ -198,15 +244,21 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
     # conectar_dispositivo() es llamado al pulsar el botón conectar
     def conectar_dispositivo(self):
 
-        del self.datos_x[:]
-        del self.datos_y[:]
+        del self.datos_tiempo[:]
+        del self.datos_temp[:]
+        del self.datos_error[:]
+        del self.datos_pid[:]
+        del self.datos_ref[:]
 
-        self.plot_1.setXRange(0, 3, 0.05)
-        self.plot_1.setYRange(0, 100, 0.05)
+        self.plot_1.setYRange(0, 100, 0.01)
+        self.plot_1.setXRange(0, 3, 0.01)
 
         self.readThread.set_timer()
 
-        self.plot_1.clear()
+        self.curve_ref.setData([], [])
+        self.curve_error.setData([], [])
+        self.curve_pid.setData([], [])
+        self.curve_temp.setData([], [])
         self.plot_1.setMouseEnabled(False, False)
 
         # PUERTO_DISPOSITIVO contiene el nombre del puerto serie referida al dispositivo
@@ -216,7 +268,7 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
         PUERTO_DISPOSITIVO = str(self.comboPorts.itemText(self.comboPorts.currentIndex()))
 
         # PUERTO_BAUDRATE contiene el baudrate que seleccionamos dentro del comboBox del baudrate
-        PUERTO_BAUDRATE = int(self.comboData.itemText(self.comboData.currentIndex()))
+        PUERTO_BAUDRATE = 115200
 
         # Se intenta conectar al dispositivo, como puede llegar a devolver una excepción se procede de la siguiente
         # manera
@@ -243,7 +295,6 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
             self.checkBox_patron.setEnabled(False)
 
             self.comboPorts.setEnabled(False)
-            self.comboData.setEnabled(False)
 
             self.checkBox_datos.setChecked(True)
             self.checkBox_error.setChecked(True)
@@ -287,21 +338,42 @@ class MainForm(QtGui.QMainWindow, maindesign.Ui_MainWindow):
                 self.comboPorts.removeItem(k)
 
     # Actualiza la gráfica
-    def update_plot(self, temp, tiempo): # , patron, signal):
-        # self.buffer_patron = patron
-        # self.buffer_señal = signal
-        self.buffer_x = tiempo
-        self.buffer_y = temp
-        if len(self.buffer_y) != 0:
-            self.plot_1.plot(self.buffer_x, self.buffer_y, pen=(self.datos_color[0], self.datos_color[1], self.datos_color[2]), symbol=None)
+    def update_plot(self, temp, error, pid, ref, tiempo_t, tiempo_e, tiempo_p, tiempo_r):  # , patron, signal):
+        self.buffer_error = error
+        self.buffer_pid = pid
+        self.buffer_ref = ref
+        self.buffer_tiempo = tiempo_t
+        self.buffer_temp = temp
+
+        if len(self.buffer_temp) != 0: #and len(self.buffer_temp) is len(self.buffer_tiempo):
+            #self.fix_matrix(self.buffer_temp)
+            #self.curve_temp.setData(x=self.buffer_tiempo, y=self.buffer_temp)
+            self.curve_temp.setData(x=tiempo_t, y=self.buffer_temp, antialias=True)
         else:
-            self.plot_1.plot([], self.buffer_y, pen=(255, 0, 0), symbol=None)
+            self.curve_temp.setData([], [])
 
-    def clear_plot(self, tmp, time):
-        self.datos_x.extend(time)
-        self.datos_y.extend(tmp)
-        self.plot_1.setXRange(self.buffer_x[len(self.buffer_x) - 1], self.buffer_x[len(self.buffer_x) - 1] + 3, 0.05)
-        self.readThread.flush()
-        self.plot_1.clear()
+        if len(self.buffer_error) != 0: #and len(self.buffer_error) is len(self.buffer_tiempo):
+            #self.fix_matrix(self.buffer_error)
+            #self.curve_error.setData(x=self.buffer_tiempo, y=self.buffer_error)
+            self.curve_error.setData(x=tiempo_e, y=self.buffer_error, antialias=True)
+        else:
+            self.curve_error.setData([], [])
 
+        if len(self.buffer_pid) != 0:
+            #and len(self.buffer_pid) is len(self.buffer_tiempo):
+            #self.fix_matrix(self.buffer_pid)
+            #self.curve_pid.setData(x=self.buffer_tiempo, y=self.buffer_pid)
+            self.curve_pid.setData(x=tiempo_p,y=self.buffer_pid, antialias=True)
+        else:
+            self.curve_pid.setData([], [])
 
+        if len(self.buffer_ref) != 0: #and len(self.buffer_ref) is len(self.buffer_tiempo):
+            #self.fix_matrix(self.buffer_ref)
+            #self.curve_ref.setData(x=self.buffer_tiempo, y=self.buffer_ref)
+            self.curve_ref.setData(x=tiempo_r,y=self.buffer_ref, antialias=True )
+        else:
+            self.curve_ref.setData([], [])
+
+        if len(self.buffer_tiempo) >= 300:
+            self.plot_1.setXRange(self.buffer_tiempo[len(self.buffer_tiempo) - 1] - 3,
+                                  self.buffer_tiempo[len(self.buffer_tiempo) - 1], 0.05)
